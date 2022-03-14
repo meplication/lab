@@ -1,0 +1,13 @@
+/* main */
+#main {
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#char-name {
+    position: relative;
+    top: -30px;
+}
+
+/*  */
