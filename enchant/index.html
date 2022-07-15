@@ -15,98 +15,161 @@
 
 <body>
     <div class="container">
-        <h2>앱솔랩스 견장</h2>
-        <div>
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <td>스타포스</td>
-                    <td><input id="star"></td>
-                </tbody>
-            </table>
-            <table class="table table-striped table-condensed">
-                <thead>
-                    <td>어빌리티</td>
-                    <td>기본 스탯</td>
-                    <td>현재 스탯</td>
-                    <td>차이</td>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>STR</td>
-                        <td>14</td>
-                        <td><input id="str"></td>
-                        <td id="cSTR"></td>
-                    </tr>
-                    <tr>
-                        <td>DEX</td>
-                        <td>14</td>
-                        <td><input id="dex"></td>
-                        <td id="cDEX"></td>
-                    </tr>
-                    <tr>
-                        <td>INT</td>
-                        <td>14</td>
-                        <td><input id="int"></td>
-                        <td id="cINT"></td>
-                    </tr>
-                    <tr>
-                        <td>LUK</td>
-                        <td>14</td>
-                        <td><input id="luk"></td>
-                        <td id="cLUK"></td>
-                    </tr>
-                    <tr>
-                        <td>공격력</td>
-                        <td>10</td>
-                        <td><input id="atk"></td>
-                        <td id="cATK"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div>
-            <button type="button" class="btn btn-outline-primary" id="calc">계산하기</button>
-        </div>
-        <div id="log">
+        <div id="shoulder">
+            <h2>앱솔랩스 견장</h2>
+            <div>
+                <table class="table table-striped table-condensed">
+                    <tbody>
+                        <td>스타포스</td>
+                        <td><input id="shld_star"></td>
+                    </tbody>
+                </table>
+                <table class="table table-striped table-condensed">
+                    <thead>
+                        <td>어빌리티</td>
+                        <td>기본 스탯</td>
+                        <td>현재 스탯</td>
+                        <td>차이</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>STR</td>
+                            <td>14</td>
+                            <td><input id="shld_str"></td>
+                            <td id="shld_cSTR"></td>
+                        </tr>
+                        <tr>
+                            <td>DEX</td>
+                            <td>14</td>
+                            <td><input id="shld_dex"></td>
+                            <td id="shld_cDEX"></td>
+                        </tr>
+                        <tr>
+                            <td>INT</td>
+                            <td>14</td>
+                            <td><input id="shld_int"></td>
+                            <td id="shld_cINT"></td>
+                        </tr>
+                        <tr>
+                            <td>LUK</td>
+                            <td>14</td>
+                            <td><input id="shld_luk"></td>
+                            <td id="shld_cLUK"></td>
+                        </tr>
+                        <tr>
+                            <td>공격력</td>
+                            <td>10</td>
+                            <td><input id="shld_atk"></td>
+                            <td id="shld_cATK"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-primary" id="shld_calc">계산하기</button>
+            </div>
+            <div id="shld_log">
 
+            </div>
+        </div>
+        <hr>
+        <div id="cape">
+            <h2>앱솔랩스 망토</h2>
+            <div>
+                <table class="table table-striped table-condensed">
+                    <tbody>
+                        <td>업그레이드 횟수</td>
+                        <td><input id="cp_num"></td>
+                    </tbody>
+                </table>
+                <table class="table table-striped table-condensed">
+                    <thead>
+                        <td>어빌리티</td>
+                        <td>증가 스탯</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>STR</td>
+                            <td><input id="cp_str"></td>
+                        </tr>
+                        <tr>
+                            <td>DEX</td>
+                            <td><input id="cp_dex"></td>
+                        </tr>
+                        <tr>
+                            <td>INT</td>
+                            <td><input id="cp_int"></td>
+                        </tr>
+                        <tr>
+                            <td>LUK</td>
+                            <td><input id="cp_luk"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-primary" id="cp_calc">계산하기</button>
+            </div>
+            <div id="cp_log">
+
+            </div>
         </div>
     </div>
     <script>
-        let dSTR=dDEX=dINT=dLUK=14,
-            dATK=10;
+        document.getElementById("shld_calc").addEventListener('click', shld_calc);
+        document.getElementById("cp_calc").addEventListener('click', cp_calc);
 
-        document.getElementById("calc").addEventListener('click',calc);
-
-        function calc() {
-            let logElement = document.getElementById('log');
-            let STAR = document.getElementById('star').value;
-            let nSTR = document.getElementById('str').value,
-                nDEX = document.getElementById('dex').value,
-                nINT = document.getElementById('int').value,
-                nLUK = document.getElementById('luk').value,
-                nATK = document.getElementById('atk').value;
+        function shld_calc() {
+            let dSTR = dDEX = dINT = dLUK = 14,
+                dATK = 10;
+            let logElement = document.getElementById('shld_log');
+            let STAR = document.getElementById('shld_star').value;
+            let nSTR = document.getElementById('shld_str').value,
+                nDEX = document.getElementById('shld_dex').value,
+                nINT = document.getElementById('shld_int').value,
+                nLUK = document.getElementById('shld_luk').value,
+                nATK = document.getElementById('shld_atk').value;
             let rABILITY = [2, 3, 3, 13, 13], idx = 0,
                 rATK = 10,
                 s = 0, a = 0;
 
-            for (let i=1; i<=STAR; i++ ) {
+            for (let i = 1; i <= STAR; i++) {
                 s += rABILITY[idx];
-                if(i%5 == 0) idx++;
-                if(i > 15) {
+                if (i % 5 == 0) idx++;
+                if (i > 15) {
                     a += rATK;
                     rATK++;
                 }
             }
 
-            document.getElementById('cSTR').innerHTML = (nSTR - dSTR - s);
-            document.getElementById('cDEX').innerHTML = (nDEX - dDEX - s);
-            document.getElementById('cINT').innerHTML = (nINT - dINT - s);
-            document.getElementById('cLUK').innerHTML = (nLUK - dLUK - s);
-            document.getElementById('cATK').innerHTML = (nATK - dATK - a);
+            document.getElementById('shld_cSTR').innerHTML = (nSTR - dSTR - s);
+            document.getElementById('shld_cDEX').innerHTML = (nDEX - dDEX - s);
+            document.getElementById('shld_cINT').innerHTML = (nINT - dINT - s);
+            document.getElementById('shld_cLUK').innerHTML = (nLUK - dLUK - s);
+            document.getElementById('shld_cATK').innerHTML = (nATK - dATK - a);
 
             logElement.innerHTML = "<p>스타포스로 총스탯 " + s + " 만큼 올랐습니다.</p>";
             logElement.innerHTML += "<p>스타포스로 총공격력 " + a + " 만큼 올랐습니다.</p>";
             logElement.innerHTML += "<p>참고 : 30% [주스탯 +7] / 70% [주스탯 +4]</p>";
+        }
+
+        function cp_calc() {
+            let logElement = document.getElementById('cp_log');
+            let NUM = document.getElementById('cp_num').value;
+            let nSTR = document.getElementById('cp_str').value,
+                nDEX = document.getElementById('cp_dex').value,
+                nINT = document.getElementById('cp_int').value,
+                nLUK = document.getElementById('cp_luk').value;
+
+            let tmp = (nLUK - nDEX) / NUM,
+                p = 0;
+
+            if(tmp == 3) p = 100;
+            else if(tmp == 4) p = 70;
+            else if(tmp == 7) p = 30;
+
+            if(p == 0) logElement.innerHTML = "<p>계산실패!<br>원인)입력 실수, 혼용작</p>"
+            else logElement.innerHTML = "<p>" + p + "% 작</p>"
         }
     </script>
 </body>
