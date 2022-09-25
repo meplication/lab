@@ -172,6 +172,13 @@ $(function () {
   });
 });
 
+// 최대글자
+function maxLengthChk(object) {
+  if (object.value.length > object.maxLength) {
+    object.value = object.value.slice(0, object.maxLength);
+  }
+}
+
 // 남은시간 업데이트
 function remainingUpdate() {
   let $arr = $(".table tbody").children();
@@ -247,3 +254,5 @@ function randomStr() {
 
   return rds;
 }
+
+
