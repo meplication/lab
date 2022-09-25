@@ -2,8 +2,8 @@ $(function() {
   // let url = $(location).attr("pathname");
 
   // includeHTML
-  $("header").load("/include/header.html");
-  $("footer").load("/include/footer.html");
+  $("header").load("/lab/include/header.html");
+  $("footer").load("/lab/include/footer.html");
 });
 
 // 숫자 추출
