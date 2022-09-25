@@ -1,58 +1,107 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            메플리케이션
-        </title>
-        <!-- JavaScript Bundle with Popper -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
-        <!-- CSS only -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous">
-        <!-- jQuery -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-            crossorigin="anonymous"></script>
-        <!-- css -->
-        <link rel="stylesheet" type="text/css" href="/lab/css/common.css">
-        <link rel="stylesheet" type="text/css" href="/lab/css/reset.css">
-    </head>
-    <body>
-        <header></header>
-        <main>
-            <div class="wrap">
-                <div class="container" id="main">
-                    <div>
-                        <div class="text-center" id="char-img">
-                            <img
-                                class=""
-                                src="https://avatar.maplestory.nexon.com/Character/180/HAHIIKIFBADBNFIJJBOEJIGFMLHAMNDAPPHJDNMAILIIOBHMCJGNLKBDAJMIICBBONNBKLJCHDIHNBMMAADFPFNIABHOEFKPDOCNGIGEGIFBFCJDHNGLIHLDLMAPEJGEPFIGMCKCCFOMOCPCNOFAIHBALMJKAGDOKMHNKIHCHMPJGGKAKPOLMMJNLEBOFPHFPBOGDFPBAGJFMDPBJDOGFMAPNAGOKDINPCLHOCDPJDKOAJHLKNLNIPLAPIAICIOF.png"
-                                alt=""
-                                onerror="this.src='https://ssl.nexon.com/s2/game/maplestory/renewal/common/no_char_img_180.png'">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>메플리케이션</title>
+
+    <!-- jQuery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jQuery ui cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+        integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jQurey ui css cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
+        integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js"
+        integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css"
+        integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- javascript -->
+    <script src="/common/common.js"></script>
+    <script src="script.js"></script>
+    <!-- css -->
+    <link href="/common/common.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Responsive navbar-->
+    <header></header>
+    <!-- Header-->
+    <div class="title py-5">
+        <div class="container px-lg-5">
+            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-5">
+                    <h1 class="display-5 fw-bold text-break-keep">메플리케이션에 오신걸 환영합니다!</h1>
+                    <!-- <p class="fs-4">인사글</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content-->
+    <main>
+        <section class="pt-4">
+            <div class="container px-lg-5">
+                <!-- Page Features-->
+                <div class="row gx-lg-5">
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fa-solid fa-chess-board"></i>
+                                </div>
+                                <h2 class="fs-4 fw-bold">유니온 캐릭터 선택</h2>
+                                <p class="mb-0 text-break-keep">LegionSolver사이트를 쉽게 사용할 수 있게 도와줍니다.</p>
+                                <a class="btn btn-primary btn-lg mt-3" href="/legionassist/index.html">바로가기</a>
+                            </div>
                         </div>
-                        <div class="text-center" id="char-name">
-                            <img
-                                src="https://ssl.nexon.com/s2/game/maplestory/renewal/common/world_icon/icon_8.png"
-                                alt="스카니아">
-                            아미츠
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </div>
+                                <h2 class="fs-4 fw-bold">기간제 아이템 관리</h2>
+                                <p class="mb-0 text-break-keep">메이플 속 기간제 아이템을 한눈에 볼 수 있습니다.</p>
+                                <a class="btn btn-primary btn-lg mt-3" href="/itemmanagement/index.html">바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <i class="fa-solid fa-person-digging"></i>
+                                </div>
+                                <h2 class="fs-4 fw-bold">준비중</h2>
+                                <p class="mb-0 text-break-keep">유용하게 사용할 수 있는 기능을 준비 중입니다.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <footer></footer>
-        <script>
-            // includeHTML
-            $('header').load('/lab/include/header.html');
-            $('footer').load('/lab/include/footer.html');
-        </script>
-    </body>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark"></footer>
+</body>
+
 </html>
