@@ -147,5 +147,5 @@ dist
 .eslintrc
 
 #package
-.package-lock
-.package
+package.json
+package-lock.json
