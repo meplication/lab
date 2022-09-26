@@ -251,6 +251,7 @@ $(document).on("click", "#btn-script", function () {
   alert("복사했습니다.");
 });
 
+// FIXME: LegionSolver 정상적으로 안됌
 // 프리셋 클릭
 $(document).on("click", "[id*=btn-preset-]", function () {
   // 토글
@@ -325,9 +326,12 @@ $(document).on("click", ".char-card", function () {
   union["cnt"] = $(".selected").length;
   $("#union-cnt").html(`<b>${union["cnt"]} / ${union["members"]}</b>`);
 
+  console.log(legionSolver["pieceAmounts"]);
+
   localStorageObj["character"] = _.cloneDeep(character);
   localStorageObj["stats"] = _.cloneDeep(unionEffect);
   localStorageObj["union"] = _.cloneDeep(union);
+  localStorageObj["legionSolver"] = _.cloneDeep(legionSolver);
   localStorage.setItem("legionAssist", JSON.stringify(localStorageObj));
 });
 
@@ -345,6 +349,7 @@ function init() {
       tmpUnion = _.cloneDeep(localStorageObj["union"]),
       tmpCharacter = _.cloneDeep(localStorageObj["character"]),
       tmpStats = _.cloneDeep(localStorageObj["stats"]),
+      tmpLegionSolver = _.cloneDeep(localStorageObj["legionSolver"]),
       tmpPreset = _.cloneDeep(localStorageObj["preset"]);
     let $statsElement = $("#div-union-stats").children().children(),
       $presetBtnElement = $("[id*=btn-preset-]");
@@ -422,9 +427,19 @@ function init() {
             else $(".div-character > .row").append(createCard(i));
           }
         }
+        localStorageObj["character"] = _.cloneDeep(
+          tmpPreset[currentPreset]["character"]
+        );
       }
     } else {
       $("#step-2").hide();
+    }
+
+    // LegionSolver
+    if (currentPreset === -1) {
+      legionSolver = _.cloneDeep(tmpLegionSolver);
+    } else {
+      legionSolver = _.cloneDeep(tmpPreset[currentPreset]["legionSolver"]);
     }
   }
 
@@ -703,8 +718,8 @@ function setUnionInfo() {
 function setPreset(data) {
   let preset = _.cloneDeep(localStorageObj["preset"]);
 
-  unionEffect = preset[data]["stats"];
-  legionSolver = preset[data]["legionSolver"];
+  unionEffect = _.cloneDeep(preset[data]["stats"]);
+  legionSolver = _.cloneDeep(preset[data]["legionSolver"]);
   $($("#div-union-stats").children().children()).each(function () {
     let $stat = $(this).children().eq(1);
     $stat.text(unionEffect[$stat.attr("id")]);
