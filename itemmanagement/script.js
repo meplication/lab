@@ -55,7 +55,7 @@ $(function () {
         dataType: "json",
         success: function (data) {
           response(
-            $.map(data, function (item) {
+            $.map(data["list"], function (item) {
               if (item.indexOf(request.term) >= 0) {
                 return {
                   label: item,
@@ -86,7 +86,7 @@ $(function () {
       let content = `
             <tr data-rds="${i["rds"]}">
                 <td>${i["name"]}</td>
-                <td>${i["date"]}<br>${i["time"]}</td>
+                <td>${i["date"]}<br>${replaceTime(i["time"])}</td>
                 <td data-date="${i["eDate"]}" class="remaining_time"></td>
                 <td>
                     <button class="btn_delete btn btn-danger">삭제</button>
@@ -106,8 +106,6 @@ $(function () {
       alert("시간을 잘못 입력했습니다.");
       $("#time").val("");
     }
-
-    $("#time").val(h + "시 " + m + "분");
   });
 
   // 시간칸 클릭시 초기화
@@ -144,7 +142,7 @@ $(function () {
     let content = `
           <tr data-rds="${rds}">
               <td>${$name.val()}</td>
-              <td>${$date.val()}<br>${$time.val()}</td>
+              <td>${$date.val()}<br>${replaceTime($time.val())}</td>
               <td data-date="${eDate}" class="remaining_time"></td>
               <td>
                   <button class="btn_delete btn btn-danger">삭제</button>
@@ -172,11 +170,11 @@ $(function () {
   });
 });
 
-// 최대글자
-function maxLengthChk(object) {
-  if (object.value.length > object.maxLength) {
-    object.value = object.value.slice(0, object.maxLength);
-  }
+function replaceTime(data) {
+  let h = data.substr(0, 2),
+    m = data.substr(2, 2);
+
+  return h + "시 " + m + "분";
 }
 
 // 남은시간 업데이트
