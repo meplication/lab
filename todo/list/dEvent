@@ -1,0 +1,8 @@
+[
+  {
+    id: "goldenChariot_theSecondHalfOf2022",
+    icon: "./img/dEvent/goldenChariot.png",
+    title: "황금마차",
+    deadline: "202212212359",
+  },
+];
