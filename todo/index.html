@@ -78,12 +78,11 @@
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
-                            <div class="row g-0"></div>
+                            <div class="row g-0"><div class="col-12 text-center">저장된 캐릭터가 없습니다.</div></div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <button type="button" id="btn-modal-other" class="btn btn-primary">추가</button>
                     </div>
                 </div>
             </div>
@@ -97,7 +96,7 @@
                     <div class="col-3 col-lg-1 g-0"><button id="btn-help" class="btn-style-remove p-0"><i class="fa-solid fa-circle-question"></i></button></div>
                     <div class="col-3 col-lg-1 g-0"><input id="option" type="checkbox" class="p-0"></input><label for="option"><i class="fa-solid fa-gear"></i></label></div></div>
                     <div class="row align-items-center text-start mt-2 py-1 character-select">
-                        <div class="text-center col-3 col-lg-1">
+                        <div class="text-center col-3 col-lg-1 form-floating">
                             <img class="character-img" />
                         </div>
                         <div class="col-7 col-lg-10 g-0">
@@ -111,7 +110,7 @@
             <div class="row justify-content-center justify-content-lg-start">
                 <div class="content-header p-3 py-2 my-3 col-12" id="specialReward-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">특별 보상</div>
+                        <div class="col-4 col-lg-2 g-0">특별 보상</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -123,7 +122,7 @@
                 <div id="specialReward-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="dailyEvent-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">일일 이벤트</div>
+                        <div class="col-4 col-lg-2 g-0">일일 이벤트</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -135,7 +134,7 @@
                 <div id="dailyEvent-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="weeklyEvent-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">주간 이벤트</div>
+                        <div class="col-4 col-lg-2 g-0">주간 이벤트</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -147,7 +146,7 @@
                 <div id="weeklyEvent-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="dailyContent-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">일일 컨텐츠</div>
+                        <div class="col-4 col-lg-2 g-0">일일 컨텐츠</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -159,7 +158,7 @@
                 <div id="dailyContent-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="dailyBoss-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">일일 보스</div>
+                        <div class="col-4 col-lg-2 g-0">일일 보스</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -171,7 +170,7 @@
                 <div id="dailyBoss-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="dailySymbol-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">심볼</div>
+                        <div class="col-4 col-lg-2 g-0">심볼</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -183,7 +182,7 @@
                 <div id="dailySymbol-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="weeklyContent-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">주간 컨텐츠</div>
+                        <div class="col-4 col-lg-2 g-0">주간 컨텐츠</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -195,7 +194,7 @@
                 <div id="weeklyContent-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="weeklyBoss-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">주간 보스</div>
+                        <div class="col-4 col-lg-2 g-0">주간 보스</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">
@@ -207,7 +206,7 @@
                 <div id="weeklyBoss-body" class="row g-0"></div>
                 <div class="content-header p-3 py-2 my-3 col-12" id="monthlyBoss-header">
                     <div class="row align-items-center">
-                        <div class="col-4 col-lg-2">월간 보스</div>
+                        <div class="col-4 col-lg-2 g-0">월간 보스</div>
                         <div class="col-2 col-lg-1 g-0 text-center todo-cnt"></div>
                         <div class="col-6 col-lg-9">
                             <div class="progress">

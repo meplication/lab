@@ -44,6 +44,7 @@ $(function () {
   setTodoList();
 
   //
+  if (localStorageObj["character"].length) $("#modal-characterList").find(".row").eq(0).html("");
   for (let i of localStorageObj["character"]) {
     $("#modal-characterList").find(".row").eq(0).append(getCharacterList(i));
   }
@@ -73,7 +74,10 @@ $(window).on("beforeunload", function () {
 
 $(document).on("click", ".content-body", function () {
   if ($("#option").is(":checked")) return;
-  else if (!parseInt(($(".character-img").length)/2)) {
+  else if ($(".character-list").length === 0) {
+    alert("캐릭터를 추가해주세요.");
+    return;
+  } else if ($(".character-select > div > img").attr("src") === undefined) {
     alert("캐릭터를 선택해주세요.");
     return;
   } else if ($(this).hasClass("coming-soon-blur")) return;
@@ -97,6 +101,16 @@ $(document).on("click", ".content-body", function () {
 });
 
 $(document).on("change", "#option", function () {
+  if ($(".character-list").length === 0) {
+    $(this).prop("checked", false);
+    alert("캐릭터를 추가해주세요.");
+    return;
+  } else if ($(".character-select > div > img").attr("src") === undefined) {
+    $(this).prop("checked", false);
+    alert("캐릭터를 선택해주세요.");
+    return;
+  }
+  console.log();
   if ($(this).is(":checked")) {
     $(this).next().html('<i class="fa-solid fa-floppy-disk"></i>');
     removeTodo();
@@ -159,10 +173,12 @@ $(document).on("click", "#btn-modal-other", function () {
     localStorageObj["character"].push(_.cloneDeep(res));
     localStorageObj["todoList"].push(_.cloneDeep(getTodoInit()));
   }
+  $("#modal-characterList").find(".row").eq(0).html("");
   $("#modal-characterList").find(".row").eq(0).append(getCharacterList(res));
   localStorage.setItem("todo", JSON.stringify(localStorageObj));
 
   $("#other-char").val("");
+  $("#option").attr("disabled", false);
   $("#modal-characterAdd").modal("hide");
 });
 
@@ -358,10 +374,10 @@ function getCharacterList(data) {
   return `
     <div class="p-lg-3 py-lg-1 p-1 col-12 col-lg-6">
       <div class="row align-items-center text-start py-1 character-list">
-          <div class="text-end g-0 col-3 col-lg-3">
+          <div class="text-end g-0 col-3 col-lg-3 form-floating">
               <img class="character-img" src="${data["avatarImg"]}" />
           </div>
-          <div class="col-7 col-lg-9">
+          <div class="col-7 col-lg-9 g-0">
               <div class="dividingLine-left">
                   <div class="character-name">${data["name"]}</div>
                   <div class="character-info">${data["level"]} ${data["job"]}</div>

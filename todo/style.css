@@ -1,26 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-
-@media (min-width: 577px) {
-    .content-body {
-        height: 5rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .content-body {
-        height: 4rem;
-    }
-
-    .todo-cnt {
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width: 1400px) {
-    .content-body {
-        height: 4rem;
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&display=swap');
 
 /* 메뉴 */
 #btn-help,
@@ -42,10 +20,25 @@
     background: none;
 }
 
+.btn-style-remove > i{
+    color: black;
+}
+
 /* 선택된 캐릭터 */
 .character-select {
     background-color: rgba(248, 244, 240, 1);
+    height: 4rem;
     border-radius: 0.5rem;
+}
+
+.character-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 58px;
+    height: auto;
+    border: 0;
 }
 
 .dividingLine-left {
@@ -54,7 +47,7 @@
 }
 
 .character-name {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
@@ -63,15 +56,10 @@
 }
 
 .character-list {
+    height: 4rem;
     background-color: rgba(248, 244, 240, 1);
     border-radius: 0.25rem;
     cursor: pointer;
-}
-
-.character-img {
-    width: 76px;
-    height: 76px;
-    border: 0;
 }
 
 /* todo header */
@@ -88,20 +76,26 @@
 
 /* todo body */
 .content-body {
+    height: 4rem;
     cursor: pointer;
     border-radius: 0.75rem;
 }
 
-.content-body>div>img {
+.content-body > div > div:not(.end-date) {
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: bold;
+}
+
+.content-body > div > img {
     width: 34px;
     height: auto;
 }
 
 .end-date {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
 }
 
-.clear>div:not(.end-date) {
+.clear > div:not(.end-date) {
     text-decoration-line: line-through;
     color: gray;
 }
@@ -136,7 +130,7 @@
 }
 
 .coming-soon-timer {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     position: absolute;
     left: 50%;
@@ -149,3 +143,32 @@
     filter: blur(2px);
     -webkit-filter: blur(2px);
 }
+
+@media (max-width: 992px) {
+    .todo-cnt {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .coming-soon {
+        font-size: 1.4rem;
+    }
+    
+    .coming-soon-timer {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .coming-soon {
+        font-size: 1.3rem;
+    }
+    
+    .coming-soon-timer {
+        font-size: 1.2rem;
+    }
+}
+
+
+
