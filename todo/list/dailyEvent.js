@@ -20,32 +20,4 @@ export let dailyEventList = [
     startDate: "202210131000",
     endDate: "202210262359",
   },
-  {
-    id: "test_2022",
-    icon: "",
-    title: "테스트",
-    startDate: "202210061521",
-    endDate: "202210262359",
-  },
-  {
-    id: "test2_2022",
-    icon: "",
-    title: "테스트2",
-    startDate: "202209131000",
-    endDate: "202210052359",
-  },
-  {
-    id: "test3_2022",
-    icon: "",
-    title: "테스트3",
-    startDate: "202209131000",
-    endDate: "202210262359",
-  },
-  {
-    id: "test4_2022",
-    icon: "",
-    title: "테스트4",
-    startDate: "202209131000",
-    endDate: "202210262359",
-  },
 ];
