@@ -145,7 +145,7 @@ $(function () {
               <td>${$date.val()}<br>${replaceTime($time.val())}</td>
               <td data-date="${eDate}" class="remaining_time"></td>
               <td>
-                  <button class="btn_delete btn btn-danger btn-xs">삭제</button>
+                  <button class="btn_delete btn btn-danger btn-sm">삭제</button>
               </td>
           </tr>`;
 
