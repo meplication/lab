@@ -69,8 +69,6 @@ var localStorageObj = {
   todoList: [],
 };
 
-alert(isIOS);
-alert(eventName);
 $(window).on(eventName, function () {
   localStorageObj["latestConnect"] = new Date();
   localStorage.setItem("todo", JSON.stringify(localStorageObj));
@@ -102,6 +100,7 @@ $(document).on("click", ".content-body", function () {
 
   setCnt(target);
   setPrograss(target);
+  localStorage.setItem("todo", JSON.stringify(localStorageObj));
 });
 
 $(document).on("change", "#option", function () {
@@ -114,7 +113,6 @@ $(document).on("change", "#option", function () {
     alert("캐릭터를 선택해주세요.");
     return;
   }
-  console.log();
   if ($(this).is(":checked")) {
     $(this).next().html('<i class="fa-solid fa-floppy-disk"></i>');
     removeTodo();
@@ -139,6 +137,7 @@ $(document).on("change", ".toggle-switchy", function () {
   } else {
     inputHiddenTodo(category, id, 1);
   }
+  localStorage.setItem("todo", JSON.stringify(localStorageObj));
 });
 
 $(document).on("click", "#btn-character-add", function () {
