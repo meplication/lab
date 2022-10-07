@@ -507,9 +507,6 @@ function ajaxChar(arr) {
           setUnionInfo();
 
           localStorageObj["union"] = _.cloneDeep(unionObj);
-        } else {
-          // TODO: 유니온 에러뜰때
-          // alert(data['union']['unionError']);
         }
 
         // localStorage
