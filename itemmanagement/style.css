@@ -1,19 +1,35 @@
-@media (min-width: 376px) {
-    .table{
-        font-size: 0.75rem;
+@media (max-width: 480px) {
+    .table {
+        font-size: 0.825rem;
     }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 360px) {
     .table {
-        font-size: 1rem;
+        font-size: 0.725rem;
     }
-    
 }
+
 
 .table {
     text-align: center;
     vertical-align: middle;
+}
+
+col:nth-child(1) {
+    width: 20%;
+}
+
+col:nth-child(2) {
+    width: 10%;
+}
+
+col:nth-child(3) {
+    width: 20%;
+}
+
+col:nth-child(4) {
+    width: 20%;
 }
 
 .name_zone {
