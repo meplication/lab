@@ -62,12 +62,16 @@ import { weeklyBossList } from "./list/weeklyBoss.js";
 import { monthlyBossList } from "./list/monthlyBoss.js";
 const arrList = [specialRewardList, dailyEventList, weeklyEventList, dailyContentList, dailyBossList, dailySymbolList, weeklyContentList, weeklyBossList, monthlyBossList],
   arrNameList = ["specialReward", "dailyEvent", "weeklyEvent", "dailyContent", "dailyBoss", "dailySymbol", "weeklyContent", "weeklyBoss", "monthlyBoss"];
+const isIOS = navigator.userAgent.match(/iPad/i)|| navigator.userAgent.match(/iPhone/i);
+const eventName = isIOS ? "pagehide" : "beforeunload";
 var localStorageObj = {
   character: [],
   todoList: [],
 };
 
-$(window).on("beforeunload", function () {
+alert(isIOS);
+alert(eventName);
+$(window).on(eventName, function () {
   localStorageObj["latestConnect"] = new Date();
   localStorage.setItem("todo", JSON.stringify(localStorageObj));
 });
