@@ -172,11 +172,11 @@ $(document).on("click", "#btn-modal-other", function () {
     localStorageObj["selected"] = 0;
     setCharacterSelect(res);
     localStorageObj["todoList"] = [_.cloneDeep(getTodoInit())];
+    $("#modal-characterList").find(".row").eq(0).html("");
   } else {
     localStorageObj["character"].push(_.cloneDeep(res));
     localStorageObj["todoList"].push(_.cloneDeep(getTodoInit()));
   }
-  $("#modal-characterList").find(".row").eq(0).html("");
   $("#modal-characterList").find(".row").eq(0).append(getCharacterList(res));
   localStorage.setItem("todo", JSON.stringify(localStorageObj));
 
